@@ -25,7 +25,7 @@ spec:
       volumes:
       - name: html
         configMap:
-          name: app-code
+          name: webapp-html-config
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -53,5 +53,5 @@ spec:
       volumes:
       - name: html
         configMap:
-          name: app-code
+          name: webapp-html-config
           optional: true
