@@ -29,19 +29,16 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /app1
+        value: /
     backendRefs:
     - name: app1-service
       namespace: app1
       port: 80
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /app2
-    backendRefs:
+      weight: 50
     - name: app2-service
       namespace: app2
       port: 80
+      weight: 50
 ---
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: ReferenceGrant
