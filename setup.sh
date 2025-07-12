@@ -23,7 +23,8 @@ gcloud container clusters create webappgw-cluster \
   --master-ipv4-cidr 172.16.0.0/28 \
   --enable-intra-node-visibility
 
-# OPTIONAL: Update master authorized networks if needed
+# Update master authorized networks to current IP
+# OPTIONAL: Use only if your Cloud Shell connection gets disconnected or you create a new session
 gcloud container clusters update webappgw-cluster \
   --zone YOUR_ZONE \
   --enable-master-authorized-networks \
@@ -54,7 +55,7 @@ kubectl create secret tls webapp-tls-secret \
   -n gateway
 
 # Clean up the dummy cert files
-rm dummy.crt dummy.key
+rm -f dummy.crt dummy.key
 
 # Create placeholder IAP OAuth secrets
 kubectl create secret generic iap-oauth-secret \
