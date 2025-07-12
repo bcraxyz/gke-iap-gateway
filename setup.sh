@@ -53,8 +53,6 @@ kubectl create secret tls webapp-tls-secret \
   --key=dummy.key \
   -n gateway
 
-echo "[✓] Created dummy TLS secret in gateway namespace."
-
 # Clean up the dummy cert files
 rm dummy.crt dummy.key
 
