@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-webapp
+      app: iapgw-webapp
   template:
     metadata:
       labels:
-        app: simple-webapp
+        app: iapgw-webapp
     spec:
       containers:
       - name: web
@@ -36,11 +36,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-webapp
+      app: iapgw-webapp
   template:
     metadata:
       labels:
-        app: simple-webapp
+        app: iapgw-webapp
     spec:
       containers:
       - name: web
